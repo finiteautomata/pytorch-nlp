@@ -1,6 +1,6 @@
 # Natural Language Processing with PyTorch
 
-Code for the book `Natural Language Processing with PyTorch` from Delip Rao, and Brian McMahan. 
+Code for the book `Natural Language Processing with PyTorch` from Delip Rao and Brian McMahan. 
 
 
 ## Instructions
