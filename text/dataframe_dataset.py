@@ -32,6 +32,21 @@ class DataframeDataset(Dataset):
         """ returns the vectorizer """
         return self._vectorizer
 
+    @classmethod
+    def load_dataset_and_load_vectorizer(cls, review_csv, vectorizer_filepath):
+        """Load dataset and the corresponding vectorizer.
+        Used in the case in the vectorizer has been cached for re-use
+
+        Args:
+            review_csv (str): location of the dataset
+            vectorizer_filepath (str): location of the saved vectorizer
+        Returns:
+            an instance of ReviewDataset
+        """
+        df = pd.read_csv(review_csv)
+        vectorizer = cls.load_vectorizer_only(vectorizer_filepath)
+        return cls(df, vectorizer)
+
     def set_split(self, split="train"):
         """ selects the splits in the dataset using a column in the dataframe
 
